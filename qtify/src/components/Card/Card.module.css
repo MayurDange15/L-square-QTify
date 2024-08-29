@@ -1,0 +1,57 @@
+.cardContainer {
+    /* display: flex; */
+    /* flex-direction: row; */
+    width: 160px;
+    height: 232px;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 205px;
+    border-radius: 10px;
+    overflow: hidden;       
+}
+
+.title {
+    height: 27px;
+    color: var(--color-white);
+    margin-top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.banner {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 42px;
+    align-items: center;
+    background: var(--color-white);
+    /* border-radius:0 0 0 0; */
+    padding: 6px;
+}
+
+.pill {
+    /* height: 23px; */
+    width: max-content;
+    font-size: 12px;
+    border-radius: 10px;
+    /* align-items: center; */
+    padding: 6px;
+    /* text-align: center; */
+    color: var(--color-white);
+    background-color: var(--color-black);
+}
+
+.chips {
+    color: var(--color-white) !important;
+    background-color: var(--color-black) !important;
+}

@@ -1,18 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import "./App.css";
+import Button from "./components/Button/Button";
+import Logo from "./components/Logo/Logo";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-// import './App.css';
+import Search from "./components/Search/Search";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        {/* Render Navbar at the top */}
-        <Navbar />
-        <Hero />
-      </div>
-    </Router>
+    <>
+      <Navbar >
+        <Logo />
+        <Search placeH={"Search a album of your choice"} />
+        <Button text="Give Feedback" onClick={() => alert("Feedback button clicked!")} />
+      </Navbar>
+      <Outlet />
+    </>
   );
 }
 
