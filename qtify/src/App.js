@@ -8,10 +8,13 @@ import { Outlet } from "react-router-dom";
 function App() {
   return (
     <>
-      <Navbar >
+      <Navbar>
         <Logo />
         <Search placeH={"Search a album of your choice"} />
-        <Button text="Give Feedback" onClick={() => alert("Feedback button clicked!")} />
+        <Button
+          text="Give Feedback"
+          onClick={() => alert("Feedback button clicked!")}
+        />
       </Navbar>
       <Outlet />
     </>
