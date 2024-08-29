@@ -1,0 +1,7 @@
+.section_wrapper {
+  background-color: var(--color-black);
+  padding: 0 30px 60px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
