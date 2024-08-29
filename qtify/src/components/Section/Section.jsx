@@ -4,22 +4,19 @@ import Card from "../Card/Card";
 import { CircularProgress } from "@mui/material";
 import Carousal from "../Carousal/Carousal";
 import FilterTab from "../FilterTab/FilterTab";
-// import { all } from "axios";
+
 export default function Section({ data, type, title, filters }) {
   const [isCarousal, setIsCarousal] = useState(true);
-  // const [songsFilters,setSongsFilters]=useState({key:"all",label:"All"})
   const [selectedFilter, setSelectedFilter] = useState(0);
-  // let allFilter=[{key:"all",label:"All"},]
   const filteredDataArray = [data];
+
   if (filters && data) {
-    // filteredDataArray.push(data)
     filteredDataArray.push(
       ...filters.map((ele) => data.filter((song) => song.genre.key === ele.key))
     );
-    console.log(data, filters, filteredDataArray);
   }
+
   function mapFilterdItem(dataArr) {
-    // console.log("f",dataArr)
     return dataArr.map((arr) => {
       return (
         <Carousal
@@ -29,9 +26,11 @@ export default function Section({ data, type, title, filters }) {
       );
     });
   }
+
   const handleCollaps = () => {
     setIsCarousal(!isCarousal);
   };
+
   return (
     <div className={styles.sectionOuter}>
       {type === "songs" ? <hr className={styles.hr} /> : null}
@@ -75,7 +74,7 @@ export default function Section({ data, type, title, filters }) {
                 ></FilterTab>
               </div>
             }
-            {/* <Carousal data={data} Component={(data)=><Card data={data} type={type}/>}  />        */}
+
             <hr className={styles.hr} />
           </div>
         )}

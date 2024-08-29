@@ -58,7 +58,6 @@ export default function FilterTab({
             },
           }}
         >
-          {/* <Tab label="All" {...a11yProps(0)} /> */}
           {tabLables.map((tab, index) => {
             console.log(tab.label, index);
             return (
@@ -77,16 +76,6 @@ export default function FilterTab({
           {ele}
         </CustomTabPanel>
       ))}
-
-      {/* <CustomTabPanel value={value} index={3}>
-        Item One
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={1}>
-        Item Two
-      </CustomTabPanel>
-      <CustomTabPanel value={value} index={2}>
-        Item Three
-      </CustomTabPanel> */}
     </Box>
   );
 }

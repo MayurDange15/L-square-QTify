@@ -7,8 +7,8 @@ export default function Card({ data, type }) {
   const createCard = (type) => {
     switch (type) {
       case "album": {
-        // console.log(type)
         const { title, image, songs, follows, slug } = data;
+
         return (
           <Tooltip title={`${songs.length} songs`} placement="top" arrow>
             <Link to={`/album/${slug}`}>
@@ -31,9 +31,10 @@ export default function Card({ data, type }) {
           </Tooltip>
         );
       }
+
       case "songs": {
         const { title, image, likes } = data;
-        // console.log(type,data)
+
         return (
           <div className={styles.cardContainer}>
             <div className={styles.card}>

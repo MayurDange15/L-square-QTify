@@ -11,11 +11,11 @@ function Navbar({ searchData }) {
       <Link to="/">
         <Logo />
       </Link>
-      <Search
-        placeholder="Search a song of your choice"
-        searchData={searchData}
+      <Search placeholder="Search a song of your choice" />
+      <Button
+        text="Give Feedback"
+        onClick={() => alert("Feedback button clicked!")}
       />
-      <Button text="Give Feedback" onClick={() => alert("Feedback button clicked!")} />
     </nav>
   );
 }

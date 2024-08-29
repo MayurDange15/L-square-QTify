@@ -1,39 +1,27 @@
-.search {
-  padding: 14px 20px;
-  height: 100%;
-  border-radius: 8px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  border: 1px solid var(--color-black);
-  width: 502px;
-}
-
-.wrapper {
+.form {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   height: 48px;
 }
 
-.searchButton {
-  border-radius: 0px 8px 8px 0px;
+.searchBtn {
+  /* position: absolute; */
+  height: 100%;
   padding: 14px 20px;
-  height: 100%;
-  border: 1px solid var(--color-black);
-  border-left: none;
+  width: 66px;
+  border-radius: 0px 8px 8px 0px;
+  border-color: var(--color-black);
+  border: 1px solid;
+  border-left: 0;
   cursor: pointer;
+}
+
+.input {
   height: 100%;
-}
-
-.listElement {
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.albumTitle {
-  font-size: 16px;
-}
-
-.albumArtists {
-  font-size: 12px;
+  width: 502px;
+  padding: 14px 20px;
+  /* margin: 0; */
+  border-color: var(--color-black);
+  border-radius: 8px 0px 0px 8px;
+  border: 1px solid;
 }
