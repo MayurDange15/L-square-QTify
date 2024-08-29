@@ -1,0 +1,10 @@
+.tab{
+    text-transform: none !important;
+    color: var(--color-text) !important;
+    font-weight: bold !important;
+}
+.tabs{
+    /* color: var(--color-white) !important; */
+    /* display: flex; */
+    margin-bottom: 20px;
+}

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import styles from "./Section.module.css";
 import Card from "../Card/Card";
 import { CircularProgress } from "@mui/material";
-// import Carousal from "../Carousal/Carousal";
-
+import Carousal from "../Carousal/Carousal";
+import FilterTab from "../FilterTab/FilterTab";
 // import { all } from "axios";
 export default function Section({ data, type, title, filters }) {
   const [isCarousal, setIsCarousal] = useState(true);
@@ -21,7 +21,12 @@ export default function Section({ data, type, title, filters }) {
   function mapFilterdItem(dataArr) {
     // console.log("f",dataArr)
     return dataArr.map((arr) => {
-      return <Card data={arr} type={type} />;
+      return (
+        <Carousal
+          data={arr}
+          Component={(arr) => <Card data={arr} type={type} />}
+        />
+      );
     });
   }
   const handleCollaps = () => {
@@ -46,12 +51,11 @@ export default function Section({ data, type, title, filters }) {
         ) : type !== "songs" ? (
           <div className={styles.cards}>
             {isCarousal ? (
-              <></>
+              <Carousal
+                data={data}
+                Component={(data) => <Card data={data} type={type} />}
+              />
             ) : (
-              //   <Carousal
-              //     data={data}
-              //     Component={(data) => <Card data={data} type={type} />}
-              //   />
               <div className={styles.cardGroup}>
                 {data.map((item) => (
                   <Card key={item.id} data={item} type={type} />
@@ -61,7 +65,16 @@ export default function Section({ data, type, title, filters }) {
           </div>
         ) : (
           <div className={styles.cards}>
-            {<div className={styles.filter_tabs}></div>}
+            {
+              <div className={styles.filter_tabs}>
+                <FilterTab
+                  tabLables={[{ key: "all", label: "All" }, ...filters]}
+                  tabData={mapFilterdItem(filteredDataArray)}
+                  selectedFilter={selectedFilter}
+                  setSelectedFilter={setSelectedFilter}
+                ></FilterTab>
+              </div>
+            }
             {/* <Carousal data={data} Component={(data)=><Card data={data} type={type}/>}  />        */}
             <hr className={styles.hr} />
           </div>
